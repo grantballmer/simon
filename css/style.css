@@ -155,25 +155,33 @@
   background-color: green;
   border-top-left-radius: 100%;
   opacity: .3;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none; }
 
 .red {
   background-color: red;
   border-top-right-radius: 100%;
   opacity: .3;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none; }
 
 .yellow {
   background-color: yellow;
   border-bottom-left-radius: 100%;
   opacity: .3;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none; }
 
 .blue {
   background-color: blue;
   border-bottom-right-radius: 100%;
   opacity: .3;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none; }
 
 .left {
   margin-right: 1%; }

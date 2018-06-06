@@ -43,6 +43,8 @@ $charcoal: #222222;
   border-#{$topBottom}-#{$leftRight}-radius: 100%;
   opacity: .3;
   cursor: pointer;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
 }
 
 *{
