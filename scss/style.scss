@@ -1,0 +1,204 @@
+$wide-mobile-width: 550px; 
+$tablet-width: 812px;
+$desktop-width: 1024px;
+$super-width: 1400px;
+
+$btn-margin: 1%;
+
+$deep-red: #280003;
+$charcoal: #222222;
+
+@mixin wide-mobile {
+  @media (min-width: #{$wide-mobile-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin super {
+  @media (min-width: #{$super-width}) {
+    @content;
+  }
+}
+
+@mixin flex($justify, $align) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin button($bkColor, $topBottom, $leftRight) {
+  background-color: $bkColor;
+  border-#{$topBottom}-#{$leftRight}-radius: 100%;
+  opacity: .3;
+  cursor: pointer;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container {
+  width: 400px;
+  height: 400px;
+  background-color: $charcoal;
+  padding: 10px;
+  margin: 10% auto;
+  border-radius: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.middle {
+  width: 200px;
+  height: 200px;
+  background-color: $charcoal;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.controls {
+  width: 100%;
+  height: 100%;
+  @include flex(space-around, center);
+  flex-direction: column;
+  background-color: lightgrey;
+  padding: 10px;
+  border-radius: 50%;
+  text-align: center;
+  
+  &__buttons {
+    width: 100%;
+    @include flex(space-around, center);
+    font-size: .85rem;
+  }
+}
+
+.column {
+  @include flex(center, center);
+  flex-direction: column;
+  
+}
+
+.count__box {
+  width: 45px;
+  height: 30px;
+  border-radius: 3px;
+  border: 2px solid $charcoal;
+  background-color: $deep-red;
+  @include flex(center, center);
+  color: #B00000;
+  font-size: 1.6rem;
+}
+
+.blinkOn {
+  animation: powerBlink 1s .2s linear;
+}
+
+@keyframes powerBlink {
+  0% {opacity: 1;}
+  25% {opacity: 0;}
+  50% {opacity: 1;}
+  75% {opacity: 0;}
+  100%{opacity: 1;}
+}
+
+.smallBtn {
+  width: 30px;
+  height: 30px;
+  margin: 3px 0;
+  border-radius: 50%;
+  background-color: orange;
+  border: 4px solid $charcoal;
+  cursor: pointer;
+  box-shadow: 1px 2px 1px 1px rgba(0,0,0, 0.5);
+  
+  &:active {
+    transform: translateY(2px);
+    box-shadow: none;
+  }
+}
+
+.light {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: $deep-red;
+  margin-bottom: 3px;
+  border: 3px solid $charcoal;
+}
+
+.lightOn {
+	background-color: #B00000;
+}
+
+.wrapper {
+  @include flex(center, center);
+  text-transform: uppercase;
+  font-size: .85rem;
+}
+
+.onOff {
+  width: 60px;
+  height: 30px;
+  margin: 0 5px;
+  padding: 3px;
+  background-color: $charcoal;
+  
+  &__slider {
+    width: 50%;
+    height: 100%;
+    background-color: #1d69d7;
+    transition: transform .15s linear;
+    cursor: pointer;
+  }
+}
+
+.slide {
+  transform: translateX(100%);
+}
+
+.button {
+  width: 49%;
+  height: 49%;
+}
+
+.green { @include button(green, top, left);}
+.red {@include button(red, top, right);}
+.yellow {@include button(yellow, bottom, left);}
+.blue {@include button(blue, bottom, right);}
+
+.left {margin-right: $btn-margin;}
+.right {margin-left: $btn-margin;}
+.top {margin-bottom: $btn-margin;}
+.bottom {margin-top: $btn-margin;}
+
+.lightUp {
+  opacity: 1;
+  // animation: lightUpBtn .7s linear;
+}
+
+@keyframes lightUpBtn {
+  0%{opacity: 1;}
+  99%{opacity: 1;}
+  100%{opacity: .3;}
+}

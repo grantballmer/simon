@@ -1,0 +1,14 @@
+{
+  "name": "simon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "scss": "node-sass --watch scss -o css"
+  },
+  "author": "Grant Ballmer",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.9.0"
+  }
+}
