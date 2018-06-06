@@ -117,4 +117,11 @@ buttons.forEach(button => button.addEventListener('mousedown', function() {
 	button.classList.add('lightUp');
 }));
 
+buttons.forEach(button => button.addEventListener('touchstart', function() {
+	if(!on || !compFinished) return;
+	button.classList.add('lightUp');
+}));
+
 buttons.forEach(button => button.addEventListener('mouseup', mouseUpHandler));
+
+buttons.forEach(button => button.addEventListener('touchend', mouseUpHandler));

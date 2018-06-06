@@ -52,20 +52,25 @@ $charcoal: #222222;
 }
 
 .container {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   background-color: $charcoal;
   padding: 10px;
-  margin: 10% auto;
+  margin: 25% auto 0 auto;
   border-radius: 50%;
   display: flex;
   flex-wrap: wrap;
   position: relative;
+	@include wide-mobile {
+		width: 400px;
+		height: 400px;
+		margin: 10% auto 0 auto;
+	}
 }
 
 .middle {
-  width: 200px;
-  height: 200px;
+  width: 165px;
+  height: 165px;
   background-color: $charcoal;
   padding: 10px;
   position: absolute;
@@ -74,6 +79,10 @@ $charcoal: #222222;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   z-index: 2;
+	@include wide-mobile {
+		width: 200px;
+		height: 200px;
+	}
 }
 
 .controls {
@@ -89,7 +98,10 @@ $charcoal: #222222;
   &__buttons {
     width: 100%;
     @include flex(space-around, center);
-    font-size: .85rem;
+    font-size: .65rem;
+		@include wide-mobile {
+			font-size: .85rem;
+		}
   }
 }
 
@@ -123,14 +135,18 @@ $charcoal: #222222;
 }
 
 .smallBtn {
-  width: 30px;
-  height: 30px;
+  width: 22px;
+  height: 22px;
   margin: 3px 0;
   border-radius: 50%;
   background-color: orange;
   border: 4px solid $charcoal;
   cursor: pointer;
   box-shadow: 1px 2px 1px 1px rgba(0,0,0, 0.5);
+	@include wide-mobile {
+		width: 30px;
+		height: 30px;
+	}
   
   &:active {
     transform: translateY(2px);
@@ -154,15 +170,22 @@ $charcoal: #222222;
 .wrapper {
   @include flex(center, center);
   text-transform: uppercase;
-  font-size: .85rem;
+  font-size: .7rem;
+	@include wide-mobile {
+		font-size: .85rem;
+	}
 }
 
 .onOff {
-  width: 60px;
-  height: 30px;
+  width: 45px;
+  height: 22px;
   margin: 0 5px;
   padding: 3px;
   background-color: $charcoal;
+	@include wide-mobile {
+		width: 60px;
+		height: 30px;
+	}
   
   &__slider {
     width: 50%;
