@@ -122,7 +122,8 @@ function mouseUpHandler(e) {
 //	buttons.forEach(button => button.addEventListener('mouseup', mouseUpHandler));
 //}
 
-buttons.forEach(button => button.addEventListener('touchstart', function() {
+buttons.forEach(button => button.addEventListener('touchstart', function(e) {
+	e.preventDefault();
 	if(!on || !compFinished) return;
 	button.classList.add('lightUp');
 }));
