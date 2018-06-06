@@ -90,7 +90,8 @@ function wrongAnswer() {
 	});
 }
 
-function mouseUpHandler() {
+function mouseUpHandler(e) {
+	e.preventDefault();
 	if(!on || !compFinished) return;
 	this.classList.remove('lightUp');
 	let index = Number(this.dataset.index);
@@ -112,16 +113,25 @@ function mouseUpHandler() {
 	}
 }
 
-buttons.forEach(button => button.addEventListener('mousedown', function() {
-	if(!on || !compFinished) return;
-	button.classList.add('lightUp');
-}));
+//if (window.innerWidth > 550) {
+//	buttons.forEach(button => button.addEventListener('mousedown', function() {
+//		if(!on || !compFinished) return;
+//		button.classList.add('lightUp');
+//	}));
+//	
+//	buttons.forEach(button => button.addEventListener('mouseup', mouseUpHandler));
+//}
 
 buttons.forEach(button => button.addEventListener('touchstart', function() {
 	if(!on || !compFinished) return;
 	button.classList.add('lightUp');
 }));
 
-buttons.forEach(button => button.addEventListener('mouseup', mouseUpHandler));
-
 buttons.forEach(button => button.addEventListener('touchend', mouseUpHandler));
+
+buttons.forEach(button => button.addEventListener('mousedown', function() {
+	if(!on || !compFinished) return;
+	button.classList.add('lightUp');
+}));
+
+buttons.forEach(button => button.addEventListener('mouseup', mouseUpHandler));
